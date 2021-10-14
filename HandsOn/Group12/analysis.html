@@ -1,26 +1,70 @@
 <html>
+
 <body>
-<h1>Data Analysis</h1>
+  <h1>Data Analysis</h1>
 
-<h2>Dataset analysis</h2>
+  <h2>Dataset analysis</h2>
 
-<ul>
-	<li>1001 rows</li>
-	<li>30 attributes</li>
-</ul>
+  <ul>
+    <li>1001 rows</li>
+    <li>30 attributes</li>
+  </ul>
 
-<b>Attribute description:</b>
-<style type="text/css">
-    .tg  {border:none;border-collapse:collapse;border-color:#ccc;border-spacing:0;}
-    .tg td{background-color:#fff;border-color:#ccc;border-style:solid;border-width:0px;color:#333;
-      font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
-    .tg th{background-color:#f0f0f0;border-color:#ccc;border-style:solid;border-width:0px;color:#333;
-      font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-    .tg .tg-grbq{background-color:#313131;color:#ffffff;text-align:left;vertical-align:top}
-    .tg .tg-buh4{background-color:#f9f9f9;text-align:left;vertical-align:top}
-    .tg .tg-0lax{text-align:left;vertical-align:top}
-    </style>
-    <table class="tg">
+  <b>Attribute description:</b>
+  <style type="text/css">
+    .tg {
+      border: none;
+      border-collapse: collapse;
+      border-color: #ccc;
+      border-spacing: 0;
+    }
+
+    .tg td {
+      background-color: #fff;
+      border-color: #ccc;
+      border-style: solid;
+      border-width: 0px;
+      color: #333;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      overflow: hidden;
+      padding: 10px 5px;
+      word-break: normal;
+    }
+
+    .tg th {
+      background-color: #f0f0f0;
+      border-color: #ccc;
+      border-style: solid;
+      border-width: 0px;
+      color: #333;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      font-weight: normal;
+      overflow: hidden;
+      padding: 10px 5px;
+      word-break: normal;
+    }
+
+    .tg .tg-grbq {
+      background-color: #313131;
+      color: #ffffff;
+      text-align: left;
+      vertical-align: top
+    }
+
+    .tg .tg-buh4 {
+      background-color: #f9f9f9;
+      text-align: left;
+      vertical-align: top
+    }
+
+    .tg .tg-0lax {
+      text-align: left;
+      vertical-align: top
+    }
+  </style>
+  <table class="tg">
     <thead>
       <tr>
         <th class="tg-grbq">Column</th>
@@ -46,7 +90,8 @@
         <td class="tg-buh4">PRECIO</td>
         <td class="tg-buh4">string</td>
         <td class="tg-buh4">Not unique<br>Empty values</td>
-        <td class="tg-buh4">There are pleanty of missing values<br>The type should be int but string has no clear format</td>
+        <td class="tg-buh4">There are pleanty of missing values<br>The type should be int but string has no clear format
+        </td>
       </tr>
       <tr>
         <td class="tg-0lax">GRATUITO</td>
@@ -205,32 +250,90 @@
         <td class="tg-buh4">format: /usuario/{kind}<br><br>Many kind of users are allowed</td>
       </tr>
     </tbody>
-    </table>
+  </table>
 
 
-<h2>Licensing of the Data Source Analysis</h2>
+  <h2>Licensing of the Data Source Analysis</h2>
 
-TODO
+  TODO
 
 
-<h2>Resource Naming Strategy</h2>
-<ul>
-  <li><b>Domain:</b> http://www.group12.org/ </li>
+  <h2>Resource Naming Strategy</h2>
+  <p>
+    The Web relies on the use of Uniform Resource Identifiers as a single global identification system. Defining a
+    consistent, useable, stable and self-describing Resource Naming Strategy, along with following the best practices
+    proposed by standards contribute to enhancing the quality of Linked Data.
+  </p>
+
+  <p>
+    Of course, finding the optimal naming policy is not a trivial task and has no one size fits all solution. Thus,
+    sometimes one has to follow their instict onto deciding what might suit best to the problem that their are to solve.
+    Of course, we should aim, to our best extent, to try to adhere to the recommendations provided by the reputed
+    institutions in the field.
+  </p>
+
+  <p>
+    In this work, we propose a draft for the resource naming strategy for the dataset chosen for the practical work,
+    which has been defined attending to the documentation of the subject, and to recommendations by the W3C.
+  </p>
+
+  <p>
+    To that end, let us first have a look to the generic syntax of a URI:
+    <br>
+    URI = scheme:[//authority]path[?query] [#fragment]
+    <br><br>
+    Now, let us define the domain on which our data will be located.
+    <br><br>
+    <b>SCHEME:</b> Arguably the most popular schemes are http and https. Although there are alternatives like ftp, data,
+    irc. We are sticking with the https scheme, which is the one that fits best our needs.
+    <br><br>
+    <b>AUTHORITY:</b> The authority component can be further subdivided into three subcomponents
+    <li>authority = [userinfo@]host[:port]</li>
+    <br>
+    We eschew the use of the userinfo and port subcomponents. The host we propose is <b>"data.eventsatmadrid.org"</b>, in which our ontologies will be published. It is worth noting that "eventsatmadrid.org" is an unregistered domain. 
+    <br><br>
+    Thus, the domain that we will be using can be formulated as: <b>https://data.eventsatmadrid.org/</b>
+  </p>
+  <p>
+    Now that we have defined the domain in which the ontology will be located, let us define the paths and patterns for
+    ontology classes, properties in the ontology and individuals.
+  </p>
+  <li><b>Definition of ontologies:</b> ontologies will be defined with the following pattern, where [ontologyName] is
+    the name of the ontology. [...]/ontology/<b>[ontologyName]</b></li>
   <ul>
-  	<li><b>Path:</b> madrid_events/ </li>
-  	<ul>
-  		<li><b>Ontology:</b> ontology/ </li>
-  		<ul>
-  			<li><b>Class:</b> [ClassName] </li>
-  			<li><b>Property:</b> [PropertyName] </li>
-  		</ul>
-  		<li><b>Data:</b> resource/ </li>
-  		<ul>
-  			<li><b>Individual:</b> [ClassName]/[Identifier] </li>
-  		</ul>
-  	</ul>
+    <li>Example: https://data.eventsatmadrid.org/ontology/TouristAttraction</li>
   </ul>
-</ul>
+  <li><b>Ontological terms</b> are defined using hash URIs (#), verifying the following patterns:</li>
+    <ul>
+      <li><b>Classes:</b>[...]/ontology/[ontologyName]<b>#[className]</b></li>
+      <ul><li>Example: https://data.eventsatmadrid.org/ontology/TouristAttraction#Museum</li></ul>
+    </ul>
+    <ul>
+      <li><b>Properties:</b>[...]/ontology/[ontologyName]<b>#[PropertyName]</b></li>
+      <ul><li>Example: https://data.eventsatmadrid.org/ontology/TouristAttraction#Capacity</li></ul>
+    </ul>
+  <li><b>Definition of data:</b> following the pattern [...]<b>/resource/</b></li>
+  <ul>
+    <li><b>Individuals</b>: defined using slash (/) URIs, which must verify the pattern [...]/resource/[className]<b>#[identifier]</b></li>
+    <ul><li>Example: https://data.eventsatmadrid.org/ontology/Museum#ReinaSofia</li></ul>
+  </ul>
 
+  <h3>Recap of the naming strategy</h3>
+  <ul>
+    <li><b>Domain:</b> https://data.eventsatmadrid.org/ </li>
+    <ul>
+      <li><b>Ontology:</b> ontology/ </li>
+      <ul>
+        <li><b>Class:</b> [ClassName] </li>
+        <li><b>Property:</b> [PropertyName] </li>
+      </ul>
+      <li><b>Data:</b> resource/ </li>
+      <ul>
+        <li><b>Individual:</b> [ClassName]/[Identifier] </li>
+      </ul>
+    </ul>
+  </ul>
+  </ul>
 </body>
+
 </html>
